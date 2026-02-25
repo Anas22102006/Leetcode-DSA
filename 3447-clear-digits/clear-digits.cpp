@@ -1,19 +1,13 @@
 class Solution {
 public:
     string clearDigits(string s) {
-    vector<char> v;
+    string res="";
     for(char ch:s){
         if(isalpha(ch)){
-            v.push_back(ch);
+            res+=ch;
         }
         else if(isdigit(ch)){
-            v.pop_back();
-        }
-    }
-    string res="";
-    if(v.size()>0){
-        for(char c:v){
-            res+=c;
+            res= res.substr(0,res.length()-1);
         }
     }
     return res;    
