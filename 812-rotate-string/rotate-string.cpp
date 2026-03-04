@@ -1,17 +1,9 @@
 class Solution {
 public:
     bool rotateString(string s, string goal) {
-    if(s==goal){return true;}
-    string r=s;
-    r=r.substr(1,r.length()-1)+r[0];
-    while(r!=s){
-        if(r==goal){
-            return true;
-        }
+        if(s.length()!=goal.length()){return false;}
         else{
-            r=r.substr(1,r.length()-1)+r[0];
+            return ((s+s).find(goal) !=string::npos);
         }
-    }
-    return false;    
     }
 };
